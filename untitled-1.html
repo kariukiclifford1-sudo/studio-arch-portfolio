@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--head section-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STUDIO ARCH</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="site-header">
+    <div class="header-container">
+        <h1 class="logo-heading">
+            <a href="#" class="logo-brand">
+                <div class="logo-frame">
+                    <!-- Ensure path is correct, e.g., 'images/logo.jpeg', 'assets/logo.png', etc. -->
+                    <img src="images/logo.jpeg" alt="Studio Arch Icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <!-- Fallback text if image fails to load -->
+                    <span class="logo-fallback-text" style="display:none;">SA</span>
+                </div>
+                <span class="logo-text">Studio Arch</span>
+            </a>
+        </h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Icon Button -->
+        <button class="hamburger" aria-label="Toggle Navigation" aria-expanded="false" type="button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+         <!--main content -->
+         <main id="main-content">
+            <!-- home section -->
+            <section id="home">
+                <!--slideshow banner-->
+                <div class="slideshow-container">
+                    <div class="slide fade active">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTZW-IHFZwtE97LjwhGCVx70CWZR5XvRKywlkFyC-EUmTxW4IRqTYk7uNoq-rXHzRMlLt5PZMivmO0_FmU" style="width:100%" alt="Architectural Project 1">
+                        <div class="slide-caption">
+                            <h2>Architectural Excellence</h2>
+                            <p>Creating sustainable and modern urban spaces.</p>
+                        </div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRL8cYyK2WaD1CyAROr_SbwmfIm1NBpjyCcqCEu9uyDQfKv4bFOLmRvmVMtiJi2IZsdczixpm7oh0VErKU" style="width:100%" alt="Architectural Project 2">
+                        <div class="slide-caption">
+                            <h2>Interior Design</h2>
+                            <p>Minimalist aesthetic with warm natural textures.</p>
+                        </div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSRIZTYHP6xQK8ZsVSv_G8_yjzVSpUffN_8sMurLlcN5LnaHJ0AS7bmnW4Gvdb6fBFa_dijMCJueuV855Q" style="width:100%" alt="Architectural Project 3">
+                        <div class="slide-caption">
+                            <h2>Urban Planning</h2>
+                            <p>Innovative concepts built for community living.</p>
+                        </div>
+                    <!--slideshow navigation controls-->
+                    <button class="prev-btn" id="prev-slide" aria-label="Previous Slide">&#10094;</button>
+                    <button class="next-btn" id="next-slide" aria-label="Next Slide" >&#10095;</button>
+                <div class="dots-container">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                    </div>
+                </div>
+            </section>
+            <!--about section-->
+            <section id="about" class="about-section">
+                <div class="about-story">
+                    <br>
+                <h2>ABOUT</h2>
+                <p>Founded on principles of structural purity and spatial harmony, Studio Arch creates enduring architectural designs tailored to modern living. We balance minimalist refinement with natural materials to craft functional, timeless environments.</p>
+                </div>
+                <div class="about-story-image-wrapper">
+                    <div class="image-frame">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSaNGziurX9SSiWfszVSIy7NJGHYrijpIWAJQQLx-GcJtAnjEVQS5LW_8YdpDVD1stoU0hiUbG1HLthwb4" alt="Studio Arch Architectural Studio" class="about-story-img">
+                        <div class="frame-accent"></div>
+                    </div>
+                </div>
+                <div class="mission-vision-grid">
+                    <div class="mission">
+                        <h3>OUR MISSION</h3>
+                        <p>As an Architect, I am motivated to create innovative, context
+sensitive and environmentally responsible spaces that respond to both human and ecological needs. I combine my ability to combine creative problem-solving from concept development to detailed 
+documentation with technical expertise. With a detail-oriented approach, intentionality and inclusivity, 
+I craft spaces that invite belonging, connection, and meaningful interaction with space.</p>
+                    </div>
+                    <div class="vision">
+                        <h3>OUR VISION</h3>
+                        <p>Shape a  timeless,sustainable, resilient built environment  that blends with both user and nature.</p>
+                    </div>
+                </div>
+                <div class="core-values">
+                    <h2>CORE VALUES</h2>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <span class="value-number">01</span>
+                            <h4>Intentionality</h4>
+                            <p>We don’t believe in accidental success. Every project we touch, decision we make, and strategy we deploy is driven by a clear purpose and a defined "why." By aligning our daily focus with your long-term goals, we turn deliberate choices into meaningful results.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">02</span>
+                            <h4>People-Centric</h4>
+                            <p>At the heart of everything we build are the people who use it. We design experiences and make decisions that prioritize human connection, empathy, and mutual respect. For us, success is measured by the positive impact we leave on our clients, team, and community.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">03</span>
+                            <h4> Integrity</h4>
+                            <p>Trust is our absolute foundation. We believe in doing the right thing, open transparency, and uncompromising ethics—even when no one is looking. We take full accountability for our work, ensuring our actions always match our promises.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">04</span>
+                            <h4>Creativity</h4>
+                            <p>We actively challenge the status quo to find fresh, innovative solutions to complex problems. By looking at obstacles from unique angles and embracing continuous improvement, we reimagine routine processes to deliver standout results.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">05</span>
+                            <h4>Collaboration</h4>
+                            <p>Great things are never achieved in isolation. We leverage diverse strengths, break down structural silos, and work closely with our partners toward a unified vision. By valuing collective success over individual ego, we co-create unmatched outcomes.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">06</span>
+                            <h4>Communication</h4>
+                            <p>Clear, open, and timely dialogue is what keeps us aligned. We practice active, empathetic listening just as much as we share transparent updates. By keeping information flowing smoothly, we ensure everyone stays connected and confident.</p>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-number">07</span>
+                            <h4> Attention to Detail</h4>
+                            <p>We believe that excellence lives in the smallest nuances. From minor line items to the final launch, we bring meticulous thoroughness and accuracy to every piece of work. This commitment to precision ensures your deliverables are polished, reliable, and seamless.</p>
+                        </div>
+                    </div>
+            </section>
+            <!-- services -->
+            <section id="services">
+                <h2>SERVICES OFFERED</h2>
+                <br>
+                <div class="services-container">
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Architectural Design and Production">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">01</span>
+                            <h3>Architectural Design & Production</h3>
+                            <p>Comprehensive residential, commercial, and institutional building designs from initial concept sketches to complete working drawings.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Planning and Approvals">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">02</span>
+                            <h3>Planning & Approvals</h3>
+                            <p>Navigating regulatory frameworks, zoning laws, statutory compliance, and securing official county and municipal building permits.</p>
+                        </div>  
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Construction Documentation">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">03</span>
+                            <h3>Construction Documentation</h3>
+                            <p>Detailed technical specifications, structural schematics, material schedules, and execution blueprints for precise site implementation.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="3D Visualization">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">04</span>
+                            <h3>3D Visualization</h3>
+                            <p>Photorealistic 3D external and interior renders, BIM modeling, and walkthrough animations bringing architectural designs to life.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Project Management">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">05</span>
+                            <h3>Project Management</h3>
+                            <p>End-to-end site supervision, contractor coordination, quality control, budget monitoring, and timeline management.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Landscape and Interior Design">
+                        </div>
+                        <div class="service-content">
+                            <span class="service-number">06</span>
+                            <h3>Landscape and Interior Design</h3>
+                            <p>Harmonizing indoor and outdoor living spaces through spatial planning, lighting integration, bespoke finishes, and site topography design.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects-grid">
+</div>
+                <!--my work-->
+<div class="work-slideshow-container">
+    <h2>MY WORK</h2>
+    <p>Here are some of my recent architectural projects:</p>
+
+    <div class="work-slideshow-wrapper">
+        
+        <!-- Slide 01 (Active by default) -->
+        <div class="work-slide active">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Modern Minimalist Villa">
+            <div class="work-caption">
+                <h3>Modern Minimalist Villa</h3>
+                <p>Concept Design & 3D Visualization</p>
+            </div>
+        </div>
+
+        <!-- Slide 02 -->
+        <div class="work-slide">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Urban Commercial Complex">
+            <div class="work-caption">
+                <h3>Urban Commercial Complex</h3>
+                <p>Planning & Interior Layouts</p>
+            </div>
+        </div>
+
+        <!-- Slide 03 -->
+        <div class="work-slide">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Sustainable Eco-Pavilion">
+            <div class="work-caption">
+                <h3>Sustainable Eco-Pavilion</h3>
+                <p>Site Master Planning & Eco Design</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons with Unique IDs -->
+        <button class="work-nav-btn prev-btn" id="workPrevBtn" aria-label="Previous Project">&#10094;</button>
+        <button class="work-nav-btn next-btn" id="workNextBtn" aria-label="Next Project">&#10095;</button>
+
+    </div>
+</div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="section-title">
+                    <h2>CONTACT & INQUIRIES</h2>
+                    <p>Let's collaborate on your next architectural vision or spatial design project.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-wrapper">
+                        <div class="info-block">
+                            <h3>DIRECT-REACH</h3>
+                            <p><strong>Email:</strong> <a href=" dorisnganga044@gmail.com"> dorisnganga044@gmail.com</a></p>
+                            <p><strong>Phone / WhatsApp:</strong> <a href="tel:+254743525095">+254743525095</a></p>
+                        </div>
+                        <div class="info-block">
+                            <h3>OFFICE HOURS</h3>
+                            <p><strong>Monday - Friday</strong> 9:00 AM - 5:00 PM</p>
+                            <p><strong>Saturday</strong>:By Appointment Only</p>
+                            <p><strong>Sunday</strong>: Closed </p>
+                        </div>
+                        <div class="info-block">
+                            <h3>Social Profiles</h3>
+                            <p><strong>Instagram</strong>: <a href="https://www.instagram.com/doris.nganga/" target="_blank">@doris.nganga</a></p>
+                            <p><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/doris-nganga-b26281389/" target="_blank">Doris-nganga</a></p>
+                        </div>
+<!-- CV Download Action Box -->
+<div class="cv-download-card">
+    <div class="cv-card-text">
+        <h4>Professional Profile</h4>
+        <p>Explore comprehensive credentials & architectural project history.</p>
+    </div>
+    <a href="files/DORIS CV ..pdf" class="btn-secondary-cv" target="_blank">
+        VIEW CV
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+    </a>
+</div>
+<div class="cv-download-card">
+    <div class="cv-card-text">
+        <h4>Studio Arch — Portfolio Preview</h4>
+        <p>Explore comprehensive credentials & architectural project history.</p>
+    </div>
+    <a href="files/DORIS PORTFOLIO..pdf" class="btn-secondary-cv" target="_blank">
+        VIEW PORTFOLIO
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+    </a>
+</div>
+</div>
+                </div>
+                <div class="contact-form-container">
+                    <div class="form-header">
+                    <h3>REQUEST A CONSULTATION</h3>
+                    <p>Fill out the form below and I will get back to you as soon as possible.</p>
+                    </div>
+                    <form class="contact-form" id="consultation-form" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"> Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="jane Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+254 700 000 000">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type" required>
+                                    <option value="">Select scope...</option>
+                                    <option value="Architectural design and production">Architectural design and production</option>
+                                    <option value="Planning and approvals">Planning and approvals</option>
+                                    <option value="Construction documentation">Construction documentation</option>
+                                    <option value="3D visualization">3D visualization</option>
+                                    <option value="Project management">Project management</option>
+                                    <option value="Landscape and interior design">Landscape and interior design</option>
+                                </select>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label for="estimated-budget">Estimated Budget Range</label>
+                                <select id="estimated-budget" name="estimated-budget" required>
+                                    <option value="">Select a budget range</option>
+                                    <option value="under-10k">Under KES 50,000</option>
+                                    <option value="10k-50k">KES 50,000 - KES 100,000</option>
+                                    <option value="50k-100k">KES 100,000 - KES 500,000</option>
+                                    <option value="over-100k">Over KES 500,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Brief / Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">send consultation request</button>
+                    </form>
+                </div>
+                </div>
+                <br>
+                <div class="faq-wrapper" id="faq">
+        <div class="section-title" style="margin-bottom: 2.5rem;">
+  <h3>Frequently Asked Questions</h3>
+  <p>Clear insights into our design process, statutory compliance, and deliverables.</p>
+        </div>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What is your typical project workflow and timeline?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Project timelines vary based on scale and complexity, typically ranging from 3 to 12 months from initial concept to final documentation.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do you offer site supervision services?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we provide comprehensive architectural oversight throughout the construction phase to ensure structural precision.</p>
+      </div>
+    </div>
+     <div class="faq-item">
+      <button class="faq-question">
+        <span>How are county planning approvals handled?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We manage the complete statutory submission process, ensuring all designs comply with local zoning laws and municipal building regulations.</p>
+      </div>
+    </div>
+     <div class="faq-item">
+      <button class="faq-question">
+        <span>Can I bring my own interior concepts?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We collaborate closely with clients to integrate personal style preferences into our spatial and interior design frameworks.</p>
+      </div>
+    </div>
+  </div>
+                </div>
+                </div>
+                <div id="notification-modal" class="modal-overlay">
+                    <div class="modal-content">
+                        <div class="modal-icon">&#10003;</div>
+                        <h3>Request Submitted Successfully</h3>
+                        <p>Thank you reaching out to Studio Arch. Our team is reviewing your brief and will respond shortly. </p>
+                        <button id="close-modal-btn" class="modal-close-btn">Close Window</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer section-->
+        <footer class="site-footer">
+            <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <h3>STUDIO ARCH</h3>
+                <p>Crafting Sustainable ,modern architectural spaces focused on elegance and functional clarity.</p>
+                <p class="footer-copy">&copy; 2024 STUDIO ARCH. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#services">Architectural Design & Production</a></li>
+                    <li><a href="#services">Planning & Approvals</a></li>
+                    <li><a href="#services">Construction Documentation</a></li>
+                    <li><a href="#services">3D Visualization</a></li> 
+                    <li><a href="#services">Project Management</a></li>
+                    <li><a href="#services">Landscape and Interior Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://m.facebook.com/angel.doro.50/" target="_blank" class="social-icon-btn facebook" aria-label="Facebook">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+    </svg>
+</a>
+                    <a href="https://www.instagram.com/doris.nganga/" class="social-icon-btn instagram" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/doris-nganga-b26281389/" class="social-icon-btn linkedin" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+  </a>
+
+  <!-- Twitter / X -->
+  <a href="#" class="social-icon-btn twitter" aria-label="X (Twitter)">
+    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+                </div>
+            </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <!-- Accessibility Floating Widget -->
+<div class="a11y-widget">
+    <button id="a11y-toggle-btn" aria-label="Open accessibility menu" title="Accessibility Options" type="button">
+        <!-- Modern Architectural Accessibility Icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <circle cx="12" cy="9" r="1"></circle>
+            <path d="M10 12h4"></path>
+            <path d="M12 12v5"></path>
+            <path d="M10 17h4"></path>
+        </svg>
+    </button>
+    
+    <div id="a11y-menu" class="a11y-menu hidden">
+        <h4>Accessibility Tools</h4>
+        <button id="font-size-btn" class="a11y-action-btn" type="button">Toggle Font Size (A+)</button>
+        <button id="contrast-btn" class="a11y-action-btn" type="button">Toggle High Contrast</button>
+    </div>
+</div>
+    </body>
+</html>
