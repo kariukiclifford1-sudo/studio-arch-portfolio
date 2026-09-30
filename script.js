@@ -146,29 +146,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationModal = document.getElementById('notification-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
 
-    if (consultationForm && notificationModal) {
-        consultationForm.addEventListener('submit', (e) => {
-            e.preventDefault(); 
+if (consultationForm && notificationModal) {
+    consultationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(consultationForm);
+
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: new URLSearchParams(formData).toString()
+            });
+
             notificationModal.classList.add('active');
             consultationForm.reset();
-        });
 
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', () => {
-                notificationModal.classList.remove('active');
-            });
+        } catch (error) {
+            console.error("Form submission error:", error);
+            alert("There was a problem submitting your request. Please try again.");
         }
+    });
 
-        notificationModal.addEventListener('click', (e) => {
-            if (e.target === notificationModal) {
-                notificationModal.classList.remove('active');
-            }
-        });
-    }
-
-    // --------------------------------------------------------------------------
-// CORE VALUES ACCORDION
-// --------------------------------------------------------------------------
 const valueItems = document.querySelectorAll('.value-item');
 
 if (valueItems.length > 0) {
