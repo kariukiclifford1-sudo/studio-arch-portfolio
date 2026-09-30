@@ -25,6 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== Tab Switching System =====
+
+    // One function that shows a tab
+    function showTab(targetTabId) {
+        // Highlight the active link
+        document.querySelectorAll('.nav-menu a, .logo-brand').forEach(nav => {
+            nav.classList.toggle('active', nav.getAttribute('data-tab') === targetTabId);
+        });
+
+        // Show the active tab content
+        tabContents.forEach(tab => {
+            tab.classList.toggle('active', tab.id === targetTabId);
+        });
+    }
+
+    // When a link is clicked
     tabLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -32,23 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetTabId = link.getAttribute('data-tab');
             if (!targetTabId) return;
 
-            // Highlight active link
-            document.querySelectorAll('.nav-menu a, .logo-brand').forEach(nav => {
-                if (nav.getAttribute('data-tab') === targetTabId) {
-                    nav.classList.add('active');
-                } else {
-                    nav.classList.remove('active');
-                }
-            });
+            showTab(targetTabId);
 
-            // Display active tab content
-            tabContents.forEach(tab => {
-                if (tab.id === targetTabId) {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
-                }
-            });
+            // Save the chosen tab so a refresh remembers it
+            try {
+                sessionStorage.setItem('activeTab', targetTabId);
+            } catch (err) {
+                console.warn('Could not save active tab:', err);
+            }
 
             // Close mobile drawer if open
             if (navMenu && navMenu.classList.contains('active')) {
@@ -63,6 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
+
+    // When the page loads: restore the saved tab
+    try {
+        const savedTab = sessionStorage.getItem('activeTab');
+        if (savedTab && document.getElementById(savedTab)) {
+            showTab(savedTab);
+        }
+    } catch (err) {
+        console.warn('Could not read active tab:', err);
+    }
 
     // ===== Hero Slider =====
     const heroSlides = document.querySelectorAll('.hero-slide, .slide, .carousel-item');
@@ -181,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 notificationModal.classList.remove('active');
             });
         }
-    }   // <-- this closing bracket was missing before
+    }
 
     // ===== Value Items =====
     const valueItems = document.querySelectorAll('.value-item');
