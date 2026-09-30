@@ -673,12 +673,6 @@ body {
     color: var(--accent-brown, #8c6d58);
 }
 
-/* Optional: Hide hint text on very small screens to save space, keeping just the plus icon */
-@media (max-width: 600px) {
-    .click-hint {
-        display: none;
-    }
-}
 #services {
     padding: 6rem 5vw;
     background-color: var(--bg-color);
@@ -874,27 +868,6 @@ body {
     margin: 0;
 }
 
-work-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    border: none;
-    padding: 0.8rem 1.1rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    z-index: 10;
-    border-radius: 2px;
-    transition: background-color 0.3s ease;
-}
-
-work-nav-btn:hover {
-    background-color: var(--accent-brown, #8c6d58);
-}
-
-prev-btn { left: 15px; }
-next-btn { right: 15px; }
 
 @media (max-width: 768px) {
     .work-slideshow-wrapper {
