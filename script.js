@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabLinks = document.querySelectorAll('[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
 
-    // Mobile Hamburger Toggle
+    // ===== Mobile Hamburger Toggle =====
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             const isActive = hamburger.classList.toggle('active');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', isActive);
         });
 
-        // Close menu when clicking any sub-link inside mobile menu
+        // Close menu when clicking any link inside mobile menu
         const mobileLinks = navMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Tab Switching System
+    // ===== Tab Switching System =====
     tabLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetTabId = link.getAttribute('data-tab');
             if (!targetTabId) return;
 
-            // Highlight Active Link
+            // Highlight active link
             document.querySelectorAll('.nav-menu a, .logo-brand').forEach(nav => {
                 if (nav.getAttribute('data-tab') === targetTabId) {
                     nav.classList.add('active');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Display Active Tab Content
+            // Display active tab content
             tabContents.forEach(tab => {
                 if (tab.id === targetTabId) {
                     tab.classList.add('active');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Close Mobile Drawer if open
+            // Close mobile drawer if open
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 if (hamburger) {
@@ -59,13 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Smooth scroll back to top of viewport
+            // Smooth scroll back to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 
+    // ===== Hero Slider =====
     const heroSlides = document.querySelectorAll('.hero-slide, .slide, .carousel-item');
-    
+
     if (heroSlides.length > 0) {
         let heroIndex = 0;
 
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(showNextHeroSlide, 5000);
     }
 
+    // ===== Work Slider =====
     const slides = document.querySelectorAll('.work-slide');
     const prevBtn = document.getElementById('workPrevBtn');
     const nextBtn = document.getElementById('workNextBtn');
@@ -118,11 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Automatic interval (changes slide every 5 seconds)
+        // Automatic change every 5 seconds
         setInterval(() => {
             goToSlide(currentIndex + 1);
         }, 5000);
     }
+
+    // ===== FAQ =====
     const faqItems = document.querySelectorAll('.faq-item');
 
     if (faqItems.length > 0) {
@@ -142,56 +146,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== Consultation Form =====
     const consultationForm = document.getElementById('consultation-form');
     const notificationModal = document.getElementById('notification-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
 
-if (consultationForm && notificationModal) {
-    consultationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    if (consultationForm && notificationModal) {
+        consultationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        const formData = new FormData(consultationForm);
+            const formData = new FormData(consultationForm);
 
-        try {
-            await fetch("/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: new URLSearchParams(formData).toString()
-            });
-
-            notificationModal.classList.add('active');
-            consultationForm.reset();
-
-        } catch (error) {
-            console.error("Form submission error:", error);
-            alert("There was a problem submitting your request. Please try again.");
-        }
-    });
-
-const valueItems = document.querySelectorAll('.value-item');
-
-if (valueItems.length > 0) {
-    valueItems.forEach(item => {
-        const toggleBtn = item.querySelector('.value-toggle-btn');
-
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                // Optional: Close other open values when clicking a new one
-                valueItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
+            try {
+                await fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams(formData).toString()
                 });
 
-                // Toggle current item open/closed state
-                item.classList.toggle('active');
+                notificationModal.classList.add('active');
+                consultationForm.reset();
+
+            } catch (error) {
+                console.error("Form submission error:", error);
+                alert("There was a problem submitting your request. Please try again.");
+            }
+        });
+
+        // Close the "thank you" popup
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                notificationModal.classList.remove('active');
             });
         }
-    });
-}
+    }   // <-- this closing bracket was missing before
 
+    // ===== Value Items =====
+    const valueItems = document.querySelectorAll('.value-item');
+
+    if (valueItems.length > 0) {
+        valueItems.forEach(item => {
+            const toggleBtn = item.querySelector('.value-toggle-btn');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    // Close other open values when opening a new one
+                    valueItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Open or close the clicked one
+                    item.classList.toggle('active');
+                });
+            }
+        });
+    }
+
+    // ===== Accessibility Menu =====
     const a11yToggleBtn = document.getElementById('a11y-toggle-bt');
     const a11yMenu = document.getElementById('a11y-men');
     const fontSizeBtn = document.getElementById('font-size-bt');
@@ -213,6 +228,7 @@ if (valueItems.length > 0) {
             }
         });
 
+        // Load saved settings
         if (localStorage.getItem('a11y-large-text') === 'true') {
             document.body.classList.add('large-text');
         }
@@ -224,8 +240,7 @@ if (valueItems.length > 0) {
             fontSizeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.body.classList.toggle('large-text');
-                const isLarge = document.body.classList.contains('large-text');
-                localStorage.setItem('a11y-large-text', isLarge);
+                localStorage.setItem('a11y-large-text', document.body.classList.contains('large-text'));
             });
         }
 
@@ -233,9 +248,9 @@ if (valueItems.length > 0) {
             contrastBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.body.classList.toggle('high-contrast');
-                const isContrast = document.body.classList.contains('high-contrast');
-                localStorage.setItem('a11y-high-contrast', isContrast);
+                localStorage.setItem('a11y-high-contrast', document.body.classList.contains('high-contrast'));
             });
         }
     }
+
 });
