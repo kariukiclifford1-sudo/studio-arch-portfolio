@@ -12,39 +12,40 @@
     </head>
     <body>
         <header class="site-header">
-    <div class="header-container">
-        <h1 class="logo-heading">
-            <a href="#" class="logo-brand">
-                <div class="logo-frame">
-                    <!-- Ensure path is correct, e.g., 'images/logo.jpeg', 'assets/logo.png', etc. -->
-                    <img src="images/logo.jpeg" alt="Studio Arch Icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <!-- Fallback text if image fails to load -->
-                    <span class="logo-fallback-text" style="display:none;">SA</span>
-                </div>
-                <span class="logo-text">Studio Arch</span>
-            </a>
-        </h1>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <!-- Brand Heading & Logo Frame -->
+            <h1 class="logo-heading">
+                <a href="#home" class="logo-brand" data-tab="home">
+                    <div class="logo-frame">
+                        <img src="images/logo.jpeg" alt="Studio Arch Icon">
+                    </div>
+                    <span class="logo-text">Studio Arch</span>
+                </a>
+            </h1>
 
-        <!-- Hamburger Icon Button -->
-        <button class="hamburger" aria-label="Toggle Navigation" aria-expanded="false" type="button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </div>
-</header>
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active" data-tab="home">HOME</a></li>
+                    <li><a href="#about" class="nav-link" data-tab="about">ABOUT</a></li>
+                    <li><a href="#services" class="nav-link" data-tab="services">SERVICES</a></li>
+                    <li><a href="#contact" class="nav-link" data-tab="contact">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" aria-label="Toggle Navigation" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
          <!--main content -->
          <main id="main-content">
             <!-- home section -->
-            <section id="home">
+            <section id="home" class="tab-content active">
+                <div class="container">
                 <!--slideshow banner-->
                 <div class="slideshow-container">
                     <div class="slide fade active">
@@ -77,10 +78,18 @@
                 </div>
                     </div>
                 </div>
+                </div>
+                </div>
+                <div class="tab-footer-nav">
+                    <a href="#about" class="next-tab-link" data-tab="about">
+                        <span>Next: About the studio</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
             </section>
             <!--about section-->
-            <section id="about" class="about-section">
-                <div class="about-story">
+            <section id="about" class="tab-content">
+                <div class="container">
                     <br>
                 <h2>ABOUT</h2>
                 <p>Founded on principles of structural purity and spatial harmony, Studio Arch creates enduring architectural designs tailored to modern living. We balance minimalist refinement with natural materials to craft functional, timeless environments.</p>
@@ -107,47 +116,111 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
                 <div class="core-values">
                     <h2>CORE VALUES</h2>
                     <div class="values-list">
+                        
                         <div class="value-item">
-                            <span class="value-number">01</span>
-                            <h4>Intentionality</h4>
-                            <p>We don’t believe in accidental success. Every project we touch, decision we make, and strategy we deploy is driven by a clear purpose and a defined "why." By aligning our daily focus with your long-term goals, we turn deliberate choices into meaningful results.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">01</span>
+                                <h4>Intentionality</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>We don’t believe in accidental success. Every project we touch, decision we make, and strategy we deploy is driven by a clear purpose and a defined "why." By aligning our daily focus with your long-term goals, we turn deliberate choices into meaningful results.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">02</span>
-                            <h4>People-Centric</h4>
-                            <p>At the heart of everything we build are the people who use it. We design experiences and make decisions that prioritize human connection, empathy, and mutual respect. For us, success is measured by the positive impact we leave on our clients, team, and community.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">02</span>
+                                <h4>People-Centric</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>At the heart of everything we build are the people who use it. We design experiences and make decisions that prioritize human connection, empathy, and mutual respect. For us, success is measured by the positive impact we leave on our clients, team, and community.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">03</span>
-                            <h4> Integrity</h4>
-                            <p>Trust is our absolute foundation. We believe in doing the right thing, open transparency, and uncompromising ethics—even when no one is looking. We take full accountability for our work, ensuring our actions always match our promises.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">03</span>
+                                <h4>Integrity</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>Trust is our absolute foundation. We believe in doing the right thing, open transparency, and uncompromising ethics—even when no one is looking. We take full accountability for our work, ensuring our actions always match our promises.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">04</span>
-                            <h4>Creativity</h4>
-                            <p>We actively challenge the status quo to find fresh, innovative solutions to complex problems. By looking at obstacles from unique angles and embracing continuous improvement, we reimagine routine processes to deliver standout results.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">04</span>
+                                <h4>Creativity</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>We actively challenge the status quo to find fresh, innovative solutions to complex problems. By looking at obstacles from unique angles and embracing continuous improvement, we reimagine routine processes to deliver standout results.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">05</span>
-                            <h4>Collaboration</h4>
-                            <p>Great things are never achieved in isolation. We leverage diverse strengths, break down structural silos, and work closely with our partners toward a unified vision. By valuing collective success over individual ego, we co-create unmatched outcomes.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">05</span>
+                                <h4>Collaboration</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>Great things are never achieved in isolation. We leverage diverse strengths, break down structural silos, and work closely with our partners toward a unified vision. By valuing collective success over individual ego, we co-create unmatched outcomes.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">06</span>
-                            <h4>Communication</h4>
-                            <p>Clear, open, and timely dialogue is what keeps us aligned. We practice active, empathetic listening just as much as we share transparent updates. By keeping information flowing smoothly, we ensure everyone stays connected and confident.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">06</span>
+                                <h4>Communication</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>Clear, open, and timely dialogue is what keeps us aligned. We practice active, empathetic listening just as much as we share transparent updates. By keeping information flowing smoothly, we ensure everyone stays connected and confident.</p>
+                            </div>
                         </div>
+
                         <div class="value-item">
-                            <span class="value-number">07</span>
-                            <h4> Attention to Detail</h4>
-                            <p>We believe that excellence lives in the smallest nuances. From minor line items to the final launch, we bring meticulous thoroughness and accuracy to every piece of work. This commitment to precision ensures your deliverables are polished, reliable, and seamless.</p>
+                            <button class="value-toggle-btn" type="button">
+                                <span class="value-number">07</span>
+                                <h4>Attention to Detail</h4>
+                                <div class="toggle-action">
+                                    <span class="click-hint">Click to read more</span>
+                                </div>
+                            </button>
+                            <div class="value-content">
+                                <p>We believe that excellence lives in the smallest nuances. From minor line items to the final launch, we bring meticulous thoroughness and accuracy to every piece of work. This commitment to precision ensures your deliverables are polished, reliable, and seamless.</p>
+                            </div>
                         </div>
+
                     </div>
+                </div>
+                    <div class="tab-footer-nav split">
+                <a href="#services" class="next-tab-link" data-tab="services">
+                    <span>Next: Our Services</span>
+                    <span class="arrow">&rarr;</span>
+                </a>
+            </div>
             </section>
             <!-- services -->
-            <section id="services">
+            <section id="services" class="tab-content">
+                <div class="container">
                 <h2>SERVICES OFFERED</h2>
-                <br>
                 <div class="services-container">
                     <article class="service-card">
                         <div class="service-image">
@@ -246,15 +319,58 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
             </div>
         </div>
 
-        <!-- Navigation Buttons with Unique IDs -->
-        <button class="work-nav-btn prev-btn" id="workPrevBtn" aria-label="Previous Project">&#10094;</button>
-        <button class="work-nav-btn next-btn" id="workNextBtn" aria-label="Next Project">&#10095;</button>
-
     </div>
 </div>
                 </div>
+                </div>
+                <div class="tab-footer-nav split">
+                <a href="#contact" class="next-tab-link" data-tab="contact">
+                    <span>Next: Get in Touch</span>
+                    <span class="arrow">&rarr;</span>
+                </a>
+            </div>
             </section>
-            <section id="contact">
+            <section id="contact" class="tab-content">
+                <div class="contact-form-container">
+                    <div class="form-header">
+                    <h3>REQUEST A CONSULTATION</h3>
+                    <p>Fill out the form below and I will get back to you as soon as possible.</p>
+                    </div>
+                    <!--netlify form detection-->
+                    <form class="contact-form" id="consultation-form" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"> Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type" required>
+                                    <option value="">Select scope...</option>
+                                    <option value="Architectural design and production">Architectural design and production</option>
+                                    <option value="Planning and approvals">Planning and approvals</option>
+                                    <option value="Construction documentation">Construction documentation</option>
+                                    <option value="3D visualization">3D visualization</option>
+                                    <option value="Project management">Project management</option>
+                                    <option value="Landscape and interior design">Landscape and interior design</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Brief / Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">send consultation request</button>
+                    </form>
+                </div>
+                </div>
+                <div class="container">
                 <div class="section-title">
                     <h2>CONTACT & INQUIRIES</h2>
                     <p>Let's collaborate on your next architectural vision or spatial design project.</p>
@@ -269,8 +385,8 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
                         <div class="info-block">
                             <h3>OFFICE HOURS</h3>
                             <p><strong>Monday - Friday</strong> 9:00 AM - 5:00 PM</p>
-                            <p><strong>Saturday</strong>:By Appointment Only</p>
-                            <p><strong>Sunday</strong>: Closed </p>
+                            <p><strong>Saturday</strong>:Closed</p>
+                            <p><strong>Sunday</strong>: 10:00 AM - 4:00 PM </p>
                         </div>
                         <div class="info-block">
                             <h3>Social Profiles</h3>
@@ -308,61 +424,6 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
 </div>
 </div>
                 </div>
-                <div class="contact-form-container">
-                    <div class="form-header">
-                    <h3>REQUEST A CONSULTATION</h3>
-                    <p>Fill out the form below and I will get back to you as soon as possible.</p>
-                    </div>
-                    <!--netlify form detection-->
-                    <form class="contact-form" id="consultation-form" name="contact" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="contact">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name"> Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="jane Doe">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="jane@example.com">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+254 700 000 000">
-                            </div>
-                            <div class="form-group">
-                                <label for="project-type">Project Type</label>
-                                <select id="project-type" name="project-type" required>
-                                    <option value="">Select scope...</option>
-                                    <option value="Architectural design and production">Architectural design and production</option>
-                                    <option value="Planning and approvals">Planning and approvals</option>
-                                    <option value="Construction documentation">Construction documentation</option>
-                                    <option value="3D visualization">3D visualization</option>
-                                    <option value="Project management">Project management</option>
-                                    <option value="Landscape and interior design">Landscape and interior design</option>
-                                </select>
-                            </div>
-                        </div>
-                            <div class="form-group">
-                                <label for="estimated-budget">Estimated Budget Range</label>
-                                <select id="estimated-budget" name="estimated-budget" required>
-                                    <option value="">Select a budget range</option>
-                                    <option value="under-10k">Under KES 50,000</option>
-                                    <option value="10k-50k">KES 50,000 - KES 100,000</option>
-                                    <option value="50k-100k">KES 100,000 - KES 500,000</option>
-                                    <option value="over-100k">Over KES 500,000</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Project Brief / Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">send consultation request</button>
-                    </form>
-                </div>
-                </div>
-                <br>
                 <div class="faq-wrapper" id="faq">
         <div class="section-title" style="margin-bottom: 2.5rem;">
   <h3>Frequently Asked Questions</h3>
@@ -417,35 +478,21 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
                         <button id="close-modal-btn" class="modal-close-btn">Close Window</button>
                     </div>
                 </div>
+                <div class="tab-footer-nav">
+                <a href="#home" class="prev-tab-link" data-tab="home">
+                    <span class="arrow">&larr;</span>
+                    <span>Return to Home</span>
+                </a>
+            </div>
             </section>
         </main>
         <!--footer section-->
         <footer class="site-footer">
             <div class="footer-container">
-            <div class="footer-col footer-brand">
+            <div class="footer-col">
                 <h3>STUDIO ARCH</h3>
                 <p>Crafting Sustainable ,modern architectural spaces focused on elegance and functional clarity.</p>
-                <p class="footer-copy">&copy; 2024 STUDIO ARCH. All rights reserved.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul class="footer-links-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul class="footer-links-list">
-                    <li><a href="#services">Architectural Design & Production</a></li>
-                    <li><a href="#services">Planning & Approvals</a></li>
-                    <li><a href="#services">Construction Documentation</a></li>
-                    <li><a href="#services">3D Visualization</a></li> 
-                    <li><a href="#services">Project Management</a></li>
-                    <li><a href="#services">Landscape and Interior Design</a></li>
-                </ul>
+                <p class="footer-copy">&copy; 2026 STUDIO ARCH. All rights reserved.</p>
             </div>
             <div class="footer-col footer-contact">
                 <h4>Connect</h4>
@@ -473,24 +520,5 @@ I craft spaces that invite belonging, connection, and meaningful interaction wit
             </div>
         </footer>
         <script src="script.js"></script>
-        <!-- Accessibility Floating Widget -->
-<div class="a11y-widget">
-    <button id="a11y-toggle-btn" aria-label="Open accessibility menu" title="Accessibility Options" type="button">
-        <!-- Modern Architectural Accessibility Icon -->
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <circle cx="12" cy="9" r="1"></circle>
-            <path d="M10 12h4"></path>
-            <path d="M12 12v5"></path>
-            <path d="M10 17h4"></path>
-        </svg>
-    </button>
-    
-    <div id="a11y-menu" class="a11y-menu hidden">
-        <h4>Accessibility Tools</h4>
-        <button id="font-size-btn" class="a11y-action-btn" type="button">Toggle Font Size (A+)</button>
-        <button id="contrast-btn" class="a11y-action-btn" type="button">Toggle High Contrast</button>
-    </div>
-</div>
     </body>
 </html>
