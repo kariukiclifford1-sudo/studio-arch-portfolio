@@ -282,28 +282,6 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--bg-color);
-  border: none;
-  font-size: 1.5rem;
-  padding: 1rem 1.2rem;
-  cursor: pointer;
-  z-index: 10;
-  backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease;
-}
-
-.prev { left: 1.5rem; }
-.next { right: 1.5rem; }
-
-.prev:hover, .next:hover {
-  background-color: var(--accent-brown);
-}
-
 .parallax-banner {
   height: 45vh;
   min-height: 350px;
@@ -1063,7 +1041,7 @@ body {
 }
 
 .submit-btn {
-    width: 200%;
+    width: 100%;
     padding: 1.2rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1082,6 +1060,14 @@ body {
     transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+    .consultation-form button[type="submit"],
+    .consultation-form .submit-btn {
+        width: 70%; 
+        padding: 0.85rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
 .faq-wrapper {
     max-width: 900px;
     margin: 0 auto;

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabLinks = document.querySelectorAll('[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
 
-    // ===== Mobile Hamburger Toggle =====
+    // Mobile Hamburger Toggle 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             const isActive = hamburger.classList.toggle('active');
@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+// Tab Switching System 
 
-    // ===== Tab Switching System =====
+    const ONE_HOUR = 60 * 60 * 1000; // 1 hour in milliseconds
 
     // One function that shows a tab
     function showTab(targetTabId) {
@@ -49,9 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             showTab(targetTabId);
 
-            // Save the chosen tab so a refresh remembers it
+            // Save the chosen tab and timestamp to localStorage
             try {
-                sessionStorage.setItem('activeTab', targetTabId);
+                localStorage.setItem('activeTab', targetTabId);
+                localStorage.setItem('tabTimestamp', Date.now());
             } catch (err) {
                 console.warn('Could not save active tab:', err);
             }
@@ -70,17 +72,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // When the page loads: restore the saved tab
+    // When the page loads: restore saved tab if within 1 hour, else default to home
     try {
-        const savedTab = sessionStorage.getItem('activeTab');
-        if (savedTab && document.getElementById(savedTab)) {
+        const savedTab = localStorage.getItem('activeTab');
+        const savedTime = localStorage.getItem('tabTimestamp');
+        const currentTime = Date.now();
+
+        if (savedTab && savedTime && (currentTime - savedTime < ONE_HOUR) && document.getElementById(savedTab)) {
             showTab(savedTab);
+        } else {
+            // Expired or none found -> clear and default to home
+            localStorage.removeItem('activeTab');
+            localStorage.removeItem('tabTimestamp');
+            if (document.getElementById('home')) {
+                showTab('home');
+            }
         }
     } catch (err) {
         console.warn('Could not read active tab:', err);
     }
 
-    // ===== Hero Slider =====
+    // Hero Slider 
     const heroSlides = document.querySelectorAll('.hero-slide, .slide, .carousel-item');
 
     if (heroSlides.length > 0) {
@@ -99,10 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(showNextHeroSlide, 5000);
     }
 
-    // ===== Work Slider =====
-    const slides = document.querySelectorAll('.work-slide');
-    const prevBtn = document.getElementById('workPrevBtn');
-    const nextBtn = document.getElementById('workNextBtn');
 
     if (slides.length > 0) {
         let currentIndex = 0;
@@ -125,16 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Manual controls (if buttons exist)
-        if (nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => {
-                goToSlide(currentIndex + 1);
-            });
-
-            prevBtn.addEventListener('click', () => {
-                goToSlide(currentIndex - 1);
-            });
-        }
 
         // Automatic change every 5 seconds
         setInterval(() => {
@@ -142,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // ===== FAQ =====
+    //  FAQ 
     const faqItems = document.querySelectorAll('.faq-item');
 
     if (faqItems.length > 0) {
@@ -162,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== Consultation Form =====
+    //  Consultation Form 
     const consultationForm = document.getElementById('consultation-form');
     const notificationModal = document.getElementById('notification-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
@@ -199,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ===== Value Items =====
+    //  Value Items 
     const valueItems = document.querySelectorAll('.value-item');
 
     if (valueItems.length > 0) {
@@ -220,53 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }
-
-    // ===== Accessibility Menu =====
-    const a11yToggleBtn = document.getElementById('a11y-toggle-bt');
-    const a11yMenu = document.getElementById('a11y-men');
-    const fontSizeBtn = document.getElementById('font-size-bt');
-    const contrastBtn = document.getElementById('contrast-bt');
-
-    if (a11yToggleBtn && a11yMenu) {
-        a11yToggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            a11yMenu.classList.toggle('hidden');
-        });
-
-        a11yMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-
-        document.addEventListener('click', () => {
-            if (!a11yMenu.classList.contains('hidden')) {
-                a11yMenu.classList.add('hidden');
-            }
-        });
-
-        // Load saved settings
-        if (localStorage.getItem('a11y-large-text') === 'true') {
-            document.body.classList.add('large-text');
-        }
-        if (localStorage.getItem('a11y-high-contrast') === 'true') {
-            document.body.classList.add('high-contrast');
-        }
-
-        if (fontSizeBtn) {
-            fontSizeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.body.classList.toggle('large-text');
-                localStorage.setItem('a11y-large-text', document.body.classList.contains('large-text'));
-            });
-        }
-
-        if (contrastBtn) {
-            contrastBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.body.classList.toggle('high-contrast');
-                localStorage.setItem('a11y-high-contrast', document.body.classList.contains('high-contrast'));
-            });
-        }
     }
 
 });
